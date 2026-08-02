@@ -1,0 +1,6 @@
+{
+  "name": "THINK AI 4.0",
+  "description": "Official website for THINK AI 4.0 - Premier AI Innovation Competition by IETE TCET Mumbai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
