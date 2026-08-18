@@ -5,6 +5,7 @@ export interface TeamMember {
   phone: string;
   email?: string;
   avatarPlaceholder: string;
+  fileName?: string;
   department?: string;
 }
 
