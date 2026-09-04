@@ -53,9 +53,13 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
       </div>
 
       {/* Department */}
-      <p className="text-xs font-space text-slate-400 mb-4">
-        {member.department}
-      </p>
+      {member.department ? (
+        <p className="text-xs font-space text-slate-400 mb-4">
+          {member.department}
+        </p>
+      ) : (
+        <div className="mb-3" />
+      )}
 
       {/* Contact Phone Pill */}
       <div className="w-full py-2 px-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300 mb-5 flex items-center justify-center gap-2">

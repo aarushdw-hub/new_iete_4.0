@@ -22,11 +22,11 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     id: '1',
     name: 'Chairperson',
     role: 'CHAIRPERSON',
-    phone: '+91 98201 12345',
+    phone: '+91 93243 80352',
     email: 'chairperson.iete@tcetmumbai.in',
     avatarPlaceholder: '/images/CHAIRPERSON.JPG',
     fileName: 'CHAIRPERSON.JPG',
-    department: 'IETE Student Forum Lead',
+    department: '',
   },
   {
     id: '2',
