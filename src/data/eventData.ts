@@ -68,6 +68,16 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     fileName: 'TREASURER.JPG',
     department: '',
   },
+  {
+    id: '6',
+    name: 'Secretary',
+    role: 'SECRETARY',
+    phone: '+91 70450 41051',
+    email: 'secretary.iete@tcetmumbai.in',
+    avatarPlaceholder: '/images/SECRETARY.JPG',
+    fileName: 'SECRETARY.JPG',
+    department: '',
+  },
 ];
 
 export const TIMELINE_STEPS: TimelineItem[] = [
