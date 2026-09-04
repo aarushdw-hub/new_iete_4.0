@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, MessageSquare, Shield, Sparkles, Upload, Check } from 'lucide-react';
+import { Phone, MessageSquare, Shield, Sparkles } from 'lucide-react';
 import { CORE_TEAM_MEMBERS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -10,34 +10,8 @@ interface MemberCardProps {
 }
 
 const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
-  const [currentImg, setCurrentImg] = useState<string>(member.avatarPlaceholder);
-  const [customUploaded, setCustomUploaded] = useState<boolean>(false);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
-
   const cleanPhone = member.phone.replace(/[^0-9]/g, '');
   const whatsappUrl = `https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(member.role)},%20I%20have%20a%20query%20regarding%20THINK%20AI%204.0.`;
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setCurrentImg(event.target.result as string);
-          setCustomUploaded(true);
-          sfx.playLaserScan();
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleImageError = () => {
-    // Try alternate local paths if primary fails
-    if (member.fileName && currentImg === `/images/${member.fileName}`) {
-      setCurrentImg(`/${member.fileName}`);
-    }
-  };
 
   return (
     <motion.div
@@ -55,62 +29,28 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
         ISF-0{index + 1}
       </div>
 
-      {/* Team Member Photo Frame */}
+      {/* Team Member Photo Frame (Permanent, Locked Display) */}
       <div className="relative mb-5 mt-2">
         <div className="w-36 h-36 rounded-2xl p-1 bg-gradient-to-br from-cyan-400 via-sky-300 to-cyan-600 shadow-[0_0_25px_rgba(0,229,255,0.35)] group-hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] group-hover:scale-105 transition-all duration-300 overflow-hidden relative">
           <img
-            src={currentImg}
+            src={member.avatarPlaceholder}
             alt={member.role}
-            onError={handleImageError}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-top rounded-xl transition-all duration-300"
+            className="w-full h-full object-cover object-top rounded-xl transition-all duration-300 select-none pointer-events-none"
           />
-
-          {/* Quick Photo Upload Overlay */}
-          <button
-            type="button"
-            onClick={() => fileInputRef.current?.click()}
-            title={`Upload ${member.fileName || 'custom photo'}`}
-            className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-cyan-300 transition-opacity duration-200 cursor-pointer rounded-xl"
-          >
-            <Upload className="w-5 h-5 mb-1 text-cyan-400" />
-            <span className="text-[10px] font-mono font-bold tracking-tight">
-              {customUploaded ? 'Update Photo' : 'Replace Photo'}
-            </span>
-          </button>
         </div>
 
-        {/* Hidden File Input */}
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleFileUpload}
-        />
-
         <span className="absolute -bottom-2 right-2 p-1.5 rounded-xl bg-[#070E1A] border border-cyan-400 text-cyan-300 text-xs shadow-lg flex items-center justify-center">
-          {customUploaded ? (
-            <Check className="w-4 h-4 text-emerald-400" />
-          ) : (
-            <Shield className="w-4 h-4 text-cyan-400" />
-          )}
+          <Shield className="w-4 h-4 text-cyan-400" />
         </span>
       </div>
 
-      {/* Post / Designation (Using Exact File Name) */}
+      {/* Post / Designation */}
       <div className="mb-2">
         <span className="inline-block px-3 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-400/50 text-cyan-300 font-orbitron font-bold text-sm tracking-wider uppercase shadow-[0_0_12px_rgba(0,229,255,0.2)]">
           {member.role}
         </span>
       </div>
-
-      {/* File Name Tag */}
-      {member.fileName && (
-        <span className="text-[10px] font-mono text-cyan-400/60 mb-2">
-          File: {member.fileName}
-        </span>
-      )}
 
       {/* Department */}
       <p className="text-xs font-space text-slate-400 mb-4">
