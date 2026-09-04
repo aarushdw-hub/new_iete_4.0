@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
             QUICK LINKS
           </h4>
           <ul className="space-y-2.5 font-medium text-slate-400">
-            {['About', 'Timeline', 'Problem Tracks', 'Entry Fees', 'Awards', 'Core Team', 'Guidelines'].map((item) => (
+            {['About', 'Timeline', 'Entry Fees', 'Awards', 'Core Team', 'Guidelines'].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}

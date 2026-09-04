@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, QrCode, CheckCircle2, Sparkles, AlertCircle, Send, Users } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { EVENT_DETAILS, PROBLEM_TRACKS } from '../data/eventData';
+import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
 interface Props {
@@ -21,7 +21,6 @@ export const RegistrationModal: React.FC<Props> = ({ isOpen, onClose }) => {
     leadPhone: '',
     college: 'Thakur College of Engineering & Technology (TCET)',
     teamSize: '3',
-    selectedTrack: PROBLEM_TRACKS[0].title,
     transactionRef: '',
     agreedToTerms: true,
   });
@@ -209,22 +208,6 @@ export const RegistrationModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-slate-300 font-semibold mb-1">
-                  Preferred AI Challenge Track
-                </label>
-                <select
-                  value={formData.selectedTrack}
-                  onChange={(e) => setFormData({ ...formData, selectedTrack: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 focus:outline-none focus:border-cyan-400 text-xs"
-                >
-                  {PROBLEM_TRACKS.map((t) => (
-                    <option key={t.id} value={t.title}>
-                      {t.title} ({t.category})
-                    </option>
-                  ))}
-                </select>
-              </div>
 
               <div className="pt-4 flex justify-end">
                 <button

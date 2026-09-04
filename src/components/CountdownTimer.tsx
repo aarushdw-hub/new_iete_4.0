@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Zap, Sparkles } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { Clock, Sparkles } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/eventData';
-import { sfx } from '../utils/audioSFX';
 
 interface Props {
   onOpenRegister: () => void;
@@ -17,17 +15,21 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
     isLive: false,
   });
 
-  const [testLiveMode, setTestLiveMode] = useState(false);
-
   useEffect(() => {
-    const target = new Date(EVENT_DETAILS.targetDateISO).getTime();
+    // Target 9 October 09:00:00 Indian Standard Time (IST)
+    const getTargetTime = () => {
+      const now = new Date();
+      let year = now.getFullYear();
+      let target = new Date(`${year}-10-09T09:00:00+05:30`).getTime();
+      if (target - now.getTime() <= 0) {
+        target = new Date(`${year + 1}-10-09T09:00:00+05:30`).getTime();
+      }
+      return target;
+    };
+
+    const target = getTargetTime();
 
     const updateCountdown = () => {
-      if (testLiveMode) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isLive: true });
-        return;
-      }
-
       const now = new Date().getTime();
       const diff = target - now;
 
@@ -45,21 +47,7 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
     updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [testLiveMode]);
-
-  const triggerLiveCelebration = () => {
-    sfx.playLaserScan();
-    setTestLiveMode(!testLiveMode);
-
-    if (!testLiveMode) {
-      confetti({
-        particleCount: 120,
-        spread: 80,
-        origin: { y: 0.6 },
-        colors: ['#00E5FF', '#38BDF8', '#0284C7', '#FFFFFF'],
-      });
-    }
-  };
+  }, []);
 
   return (
     <div className="w-full max-w-4xl mx-auto my-12 px-4">
@@ -78,19 +66,10 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
                 COUNTDOWN TO EVENT
               </h3>
               <p className="text-xs text-slate-400 font-mono">
-                Flagship Day: {EVENT_DETAILS.eventDate} @ TCET Campus
+                Flagship Day: 9 October (IST) @ TCET Campus
               </p>
             </div>
           </div>
-
-          <button
-            onClick={triggerLiveCelebration}
-            className="px-3 py-1.5 rounded-lg bg-slate-900 border border-cyan-500/40 text-cyan-300 font-mono text-xs hover:bg-cyan-950 transition-all flex items-center gap-1.5"
-            title="Toggle Live Event Celebration FX"
-          >
-            <Zap className="w-3.5 h-3.5 text-cyan-400" />
-            <span>{testLiveMode ? 'Reset Countdown' : 'Test Live State'}</span>
-          </button>
         </div>
 
         {/* Timer Grid / Live Banner */}
@@ -104,9 +83,9 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
             </p>
             <button
               onClick={onOpenRegister}
-              className="px-8 py-3 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)]"
+              className="px-8 py-3 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)] cursor-pointer"
             >
-              VIEW LIVE RESULTS / REGISTER
+              REGISTER NOW
             </button>
           </div>
         ) : (

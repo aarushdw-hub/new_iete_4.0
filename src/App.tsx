@@ -4,7 +4,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { WhyParticipate } from './components/WhyParticipate';
-import { ProblemTracks } from './components/ProblemTracks';
 import { EventTimeline } from './components/EventTimeline';
 import { EntryFees } from './components/EntryFees';
 import { AwardsSection } from './components/AwardsSection';
@@ -44,8 +43,6 @@ export default function App() {
         <AboutSection />
 
         <WhyParticipate />
-
-        <ProblemTracks />
 
         <EventTimeline />
 
