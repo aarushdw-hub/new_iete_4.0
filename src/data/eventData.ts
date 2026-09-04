@@ -78,6 +78,26 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     fileName: 'TREASURER.JPG',
     department: '',
   },
+  {
+    id: '7',
+    name: 'Aryan Patil',
+    role: 'OUTREACH COORDINATOR',
+    phone: '+91 84212 53277',
+    email: 'outreach.iete@tcetmumbai.in',
+    avatarPlaceholder: '/images/OUTREACH COORDINATOR.JPG',
+    fileName: 'OUTREACH COORDINATOR.JPG',
+    department: '',
+  },
+  {
+    id: '8',
+    name: 'Sarita Yadav',
+    role: 'TECHNICAL LEAD',
+    phone: '+91 80971 48468',
+    email: 'techlead.iete@tcetmumbai.in',
+    avatarPlaceholder: '/images/TECHNICAL LEAD.JPG',
+    fileName: 'TECHNICAL LEAD.JPG',
+    department: '',
+  },
 ];
 
 export const TIMELINE_STEPS: TimelineItem[] = [

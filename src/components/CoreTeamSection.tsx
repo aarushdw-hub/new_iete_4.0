@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, MessageSquare, Shield, Sparkles } from 'lucide-react';
+import { Phone, MessageSquare, Shield, MessageCircle, ExternalLink } from 'lucide-react';
 import { CORE_TEAM_MEMBERS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -19,9 +19,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{ duration: 0.5, delay: index * 0.06 }}
       onMouseEnter={() => sfx.playHover()}
-      className="w-full max-w-sm relative glass-panel glass-panel-hover rounded-3xl p-6 border border-cyan-500/30 hover:border-cyan-400 flex flex-col items-center text-center group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+      className="w-full max-w-sm relative glass-panel glass-panel-hover rounded-3xl p-5 sm:p-6 border border-cyan-500/30 hover:border-cyan-400 flex flex-col items-center text-center group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
     >
       {/* Corner Cyber Accent */}
       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-cyan-400/20 to-transparent pointer-events-none rounded-tr-3xl" />
@@ -46,7 +46,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
       </div>
 
       {/* Member Name */}
-      <h3 className="font-orbitron font-bold text-lg text-slate-100 tracking-wide mb-1 group-hover:text-cyan-300 transition-colors uppercase">
+      <h3 className="font-orbitron font-bold text-base sm:text-lg text-slate-100 tracking-wide mb-1 group-hover:text-cyan-300 transition-colors uppercase">
         {member.name}
       </h3>
 
@@ -57,7 +57,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
         </span>
       </div>
 
-      {/* Department */}
+      {/* Department (if any) */}
       {member.department ? (
         <p className="text-xs font-space text-slate-400 mb-4">
           {member.department}
@@ -73,11 +73,11 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
       </div>
 
       {/* Action Buttons: Call & WhatsApp */}
-      <div className="w-full grid grid-cols-2 gap-2.5 mt-auto pt-4 border-t border-slate-800/80">
+      <div className="w-full grid grid-cols-2 gap-2 mt-auto pt-4 border-t border-slate-800/80">
         <a
           href={`tel:${cleanPhone}`}
           onClick={() => sfx.playClick()}
-          className="py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400 text-slate-200 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer"
+          className="py-2.5 px-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400 text-slate-200 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer"
         >
           <Phone className="w-3.5 h-3.5 text-cyan-400" />
           CALL
@@ -88,7 +88,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => sfx.playClick()}
-          className="py-2.5 px-3 rounded-xl bg-cyan-950/80 hover:bg-cyan-900/90 border border-cyan-500/50 text-cyan-300 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition-all shadow-[0_0_15px_rgba(0,229,255,0.2)] hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] active:scale-95 cursor-pointer"
+          className="py-2.5 px-2 rounded-xl bg-cyan-950/80 hover:bg-cyan-900/90 border border-cyan-500/50 text-cyan-300 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 transition-all shadow-[0_0_15px_rgba(0,229,255,0.2)] hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] active:scale-95 cursor-pointer"
         >
           <MessageSquare className="w-3.5 h-3.5 text-cyan-300" />
           WHATSAPP
@@ -100,8 +100,39 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
 
 export const CoreTeamSection: React.FC = () => {
   return (
-    <section id="team" className="py-24 px-4 relative z-10">
+    <section id="team" className="py-20 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
+        {/* WhatsApp Community Banner: Follow for Updates (Above Meet Our Core Team) */}
+        <div className="max-w-2xl mx-auto mb-16 text-center">
+          <a
+            href="https://chat.whatsapp.com/ElaDLww7jQ2HFbKDddyrqQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sfx.playClick()}
+            className="group relative inline-flex items-center gap-3.5 px-6 sm:px-8 py-4 rounded-2xl bg-[#061814]/90 hover:bg-[#09241e] border border-emerald-400/40 hover:border-emerald-300 shadow-[0_0_35px_rgba(16,185,129,0.25)] hover:shadow-[0_0_50px_rgba(16,185,129,0.45)] transition-all duration-300 active:scale-95 cursor-pointer"
+          >
+            <span className="relative flex h-3 w-3 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+            </span>
+
+            <div className="p-2 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 shrink-0">
+              <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            </div>
+
+            <div className="text-left">
+              <div className="font-orbitron font-bold text-xs sm:text-sm text-emerald-300 tracking-wide flex items-center gap-2">
+                JOIN WHATSAPP GROUP FOR UPDATES
+                <ExternalLink className="w-3.5 h-3.5 text-emerald-400 opacity-70 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <p className="text-[11px] text-slate-400 font-space font-medium">
+                Follow for live announcements, event guidelines & instant updates
+              </p>
+            </div>
+          </a>
+        </div>
+
+        {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-orbitron font-extrabold text-slate-100 tracking-tight">
             MEET OUR <span className="text-cyan-400 cyan-glow-text">CORE TEAM</span>
@@ -112,8 +143,8 @@ export const CoreTeamSection: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto rounded-full" />
         </div>
 
-        {/* 5 Core Team Members Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        {/* 8 Core Team Members Grid (2 rows of 4 on desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {CORE_TEAM_MEMBERS.map((member, index) => (
             <MemberCard key={member.id} member={member} index={index} />
           ))}
