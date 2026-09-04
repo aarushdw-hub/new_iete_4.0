@@ -22,25 +22,16 @@ export default function App() {
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
   const [rulebookModalOpen, setRulebookModalOpen] = useState(false);
   const [botChatOpen, setBotChatOpen] = useState(false);
-  const [activeBotPersona, setActiveBotPersona] = useState<string>('NEXUS-AI');
-  const [soundEnabled, setSoundEnabled] = useState(true);
-
-  const handleOpenBotChat = (botName?: string) => {
-    if (botName) setActiveBotPersona(botName);
-    setBotChatOpen(true);
-  };
 
   return (
     <div className="relative min-h-screen bg-[#05070B] text-slate-100 overflow-x-hidden selection:bg-[#00E5FF] selection:text-black font-space">
       {/* Living AI Ecosystem Canvas Background */}
       <LivingBackgroundCanvas />
 
-      {/* Futuristic Fixed Navigation Bar with AI Sentinels Hub in Menu */}
+      {/* Futuristic Fixed Navigation Bar */}
       <Navbar
         onOpenRegister={() => setRegisterModalOpen(true)}
-        onOpenBotChat={handleOpenBotChat}
-        soundEnabled={soundEnabled}
-        setSoundEnabled={setSoundEnabled}
+        onOpenBotChat={() => setBotChatOpen(true)}
       />
 
       {/* Main Page Layout */}
@@ -92,7 +83,6 @@ export default function App() {
         isOpen={botChatOpen}
         onClose={() => setBotChatOpen(false)}
         onOpenRegister={() => setRegisterModalOpen(true)}
-        initialBot={activeBotPersona}
       />
     </div>
   );

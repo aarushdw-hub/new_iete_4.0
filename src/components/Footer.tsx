@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Heart, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Heart, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
         {/* Col 1: Brand */}
         <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-cyan-950 border border-cyan-400/40 text-cyan-400">
-              <Cpu className="w-6 h-6" />
-            </div>
-            <span className="font-orbitron font-extrabold text-2xl text-cyan-300 cyan-glow-text">
-              THINK AI 4.0
+          <div className="flex items-center gap-2.5">
+            <span className="font-orbitron font-extrabold text-2xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-100 to-cyan-400 cyan-glow-text">
+              THINK AI
+            </span>
+            <span className="px-2 py-0.5 rounded-md text-[11px] font-mono font-bold bg-cyan-500/10 border border-cyan-400/50 text-cyan-300 shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+              4.0
             </span>
           </div>
 
