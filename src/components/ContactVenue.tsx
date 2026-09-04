@@ -9,9 +9,6 @@ export const ContactVenue: React.FC = () => {
     <section id="contact" className="py-20 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-semibold tracking-wider uppercase">
-            // LOCATION & CONTACT
-          </span>
           <h2 className="text-3xl sm:text-5xl font-orbitron font-extrabold text-slate-100 tracking-tight">
             VENUE & <span className="text-cyan-400 cyan-glow-text">CONTACT US</span>
           </h2>

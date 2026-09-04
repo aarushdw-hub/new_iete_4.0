@@ -65,7 +65,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenRegister, onOpenRulebook })
         </span>
         <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/50 text-cyan-200 text-xs font-mono font-bold flex items-center gap-1.5">
           <Trophy className="w-3.5 h-3.5 text-cyan-300" />
-          ₹7000 Prize Pool
+          ₹10,000 RS Prize Pool
         </span>
         <span className="px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-300 text-xs font-mono">
           AI Innovation Competition

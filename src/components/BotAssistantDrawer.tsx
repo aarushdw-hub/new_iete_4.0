@@ -25,7 +25,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     {
       id: '1',
       sender: 'bot',
-      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹119/team), prizes (₹7,000 pool), rules, or schedule?`,
+      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹119/team), prizes (₹10,000 RS pool), rules, or schedule?`,
     },
   ]);
 
@@ -48,14 +48,14 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     setTimeout(() => {
       sfx.playRobotChirp();
       const query = textToSend.toLowerCase();
-      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register for ₹119. The event happens on 9th October at TCET Mumbai with a ₹7,000 prize pool!`;
+      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register for ₹119. The event happens on 9th October at TCET Mumbai with a ₹10,000 RS prize pool!`;
 
       if (query.includes('fee') || query.includes('price') || query.includes('cost') || query.includes('pay') || query.includes('₹') || query.includes('119')) {
         response = `[THINKBOT]: The entry fee is ₹119 per team! A single pass covers the entire team (2 to 4 members). No individual member fees are required.`;
       } else if (query.includes('date') || query.includes('when') || query.includes('time') || query.includes('schedule')) {
         response = `[THINKBOT]: Event Date: 9th October at TCET Campus. Registrations close on 7th October.`;
       } else if (query.includes('prize') || query.includes('award') || query.includes('win') || query.includes('cash')) {
-        response = `[THINKBOT]: Total Prize Pool is ₹7,000! 🥇 1st Place: ₹4,000 | 🥈 2nd Place: ₹2,000 | 🥉 3rd Place: ₹1,000. All participants receive verified certificates & AICTE activity points!`;
+        response = `[THINKBOT]: Total Prize Pool is ₹10,000 RS! Awarded alongside winner trophies, medals, verified certificates & AICTE activity points!`;
       } else if (query.includes('team') || query.includes('size') || query.includes('member') || query.includes('solo')) {
         response = `[THINKBOT]: Teams must have 2 to 4 members. Cross-department, inter-college, and cross-year teams are warmly welcome!`;
       } else if (query.includes('where') || query.includes('location') || query.includes('venue') || query.includes('address')) {

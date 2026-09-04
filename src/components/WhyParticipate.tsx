@@ -8,7 +8,7 @@ export const WhyParticipate: React.FC = () => {
     {
       icon: Trophy,
       title: 'Win Exciting Cash Prizes',
-      desc: 'Compete for a total cash prize pool of ₹7,000 + trophies & accolades.',
+      desc: 'Compete for a total cash prize pool of ₹10,000 RS + trophies & accolades.',
     },
     {
       icon: Clock,
@@ -51,9 +51,6 @@ export const WhyParticipate: React.FC = () => {
     <section id="why-participate" className="py-20 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-semibold tracking-wider uppercase">
-            // UNLOCK YOUR POTENTIAL
-          </span>
           <h2 className="text-3xl sm:text-5xl font-orbitron font-extrabold text-slate-100 tracking-tight">
             WHY <span className="text-cyan-400 cyan-glow-text">PARTICIPATE?</span>
           </h2>

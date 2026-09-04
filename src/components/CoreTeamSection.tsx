@@ -154,10 +154,6 @@ export const CoreTeamSection: React.FC = () => {
     <section id="team" className="py-24 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-semibold tracking-wider uppercase inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            // ORGANIZING COMMITTEE & LEADERSHIP
-          </span>
           <h2 className="text-3xl sm:text-5xl font-orbitron font-extrabold text-slate-100 tracking-tight">
             MEET OUR <span className="text-cyan-400 cyan-glow-text">CORE TEAM</span>
           </h2>

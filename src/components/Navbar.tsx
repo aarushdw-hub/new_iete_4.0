@@ -125,7 +125,7 @@ export const Navbar: React.FC<Props> = ({
           {/* Nav Links */}
           <div className="space-y-1">
             <span className="text-[10px] font-mono font-bold text-slate-500 tracking-wider uppercase">
-              // EVENT NAVIGATION
+              EVENT NAVIGATION
             </span>
             {navLinks.map((link) => (
               <a

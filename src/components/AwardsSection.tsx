@@ -1,18 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, Medal, Award, CheckCircle2, FileText, Clock, Users, Star, Eye } from 'lucide-react';
-import { AWARDS_LIST } from '../data/eventData';
+import { Trophy, CheckCircle2, FileText, Clock, Users, Star, Eye } from 'lucide-react';
 import { sfx } from '../utils/audioSFX';
 
 export const AwardsSection: React.FC = () => {
-  const getRankBadge = (rank: string) => {
-    switch (rank) {
-      case '1st': return { bg: 'from-amber-400 via-yellow-200 to-amber-500', text: 'text-amber-300', border: 'border-amber-400/60', label: '🥇 FIRST PRIZE' };
-      case '2nd': return { bg: 'from-slate-300 via-slate-100 to-slate-400', text: 'text-slate-200', border: 'border-slate-300/60', label: '🥈 SECOND PRIZE' };
-      case '3rd': return { bg: 'from-amber-700 via-amber-500 to-amber-800', text: 'text-amber-400', border: 'border-amber-600/60', label: '🥉 THIRD PRIZE' };
-      default: return { bg: 'from-cyan-400 to-sky-400', text: 'text-cyan-300', border: 'border-cyan-400/60', label: 'PRIZE' };
-    }
-  };
 
   const additionalBenefits = [
     { icon: FileText, title: 'Participation Certificate', desc: 'Verified certificate for every team presenting at TCET.' },
@@ -26,66 +17,73 @@ export const AwardsSection: React.FC = () => {
     <section id="prizes" className="py-20 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-semibold tracking-wider uppercase">
-            // VICTORY & REWARDS
-          </span>
           <h2 className="text-3xl sm:text-5xl font-orbitron font-extrabold text-slate-100 tracking-tight">
             AWARDS & <span className="text-cyan-400 cyan-glow-text">PRIZE POOL</span>
           </h2>
           <p className="text-slate-400 font-space text-sm sm:text-base">
-            Total Prize Pool of ₹7,000 + Trophies, Certificates, and AICTE Activity Hours.
+            Total Prize Pool of ₹10,000 RS + Trophies, Certificates, and AICTE Activity Hours.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto rounded-full" />
         </div>
 
-        {/* 3 Main Prize Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
-          {AWARDS_LIST.map((award, i) => {
-            const style = getRankBadge(award.rank);
-            const isFirst = award.rank === '1st';
+        {/* Single Grand Prize Pool Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          onMouseEnter={() => sfx.playHover()}
+          className="relative max-w-2xl mx-auto glass-panel rounded-3xl p-8 sm:p-12 border-2 border-cyan-400 shadow-[0_0_60px_rgba(0,229,255,0.3)] hover:shadow-[0_0_80px_rgba(0,229,255,0.45)] transition-all duration-300 text-center overflow-hidden mb-16 group"
+        >
+          {/* Top Neon Laser Accent */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+          
+          {/* Radial Ambient Glow */}
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-[90px] pointer-events-none" />
 
-            return (
-              <motion.div
-                key={award.rank}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                onMouseEnter={() => sfx.playHover()}
-                className={`relative glass-panel rounded-3xl p-8 border ${
-                  isFirst
-                    ? 'border-cyan-400 shadow-[0_0_40px_rgba(0,229,255,0.35)] scale-105 z-10'
-                    : 'border-cyan-500/30'
-                } hover:border-cyan-300 transition-all duration-300 flex flex-col justify-between group`}
-              >
-                {/* Top Badge */}
-                <div className="mb-6">
-                  <span className={`px-3 py-1 rounded-full bg-slate-900 border ${style.border} ${style.text} font-orbitron font-bold text-xs tracking-wider uppercase inline-block mb-4`}>
-                    {style.label}
-                  </span>
+          {/* Trophy Icon */}
+          <div className="inline-flex p-4 rounded-2xl bg-cyan-950/80 border border-cyan-400/50 text-cyan-300 mb-5 shadow-[0_0_25px_rgba(0,229,255,0.4)] group-hover:scale-110 transition-transform">
+            <Trophy className="w-10 h-10 text-cyan-300" />
+          </div>
 
-                  <div className="font-orbitron font-black text-5xl text-cyan-300 cyan-glow-text mb-2">
-                    {award.amount}
-                  </div>
+          <div className="font-orbitron font-bold text-xs sm:text-sm tracking-widest text-cyan-400 uppercase mb-2">
+            GRAND EVENT REWARD
+          </div>
 
-                  <h3 className="font-orbitron font-bold text-lg text-slate-100 group-hover:text-cyan-300 transition-colors">
-                    {award.title}
-                  </h3>
-                </div>
+          {/* Big Prize Amount */}
+          <div className="font-orbitron font-black text-5xl sm:text-7xl text-cyan-300 cyan-glow-text mb-3 tracking-tight">
+            ₹10,000
+          </div>
 
-                {/* Perks list */}
-                <div className="space-y-3 font-space text-xs text-slate-300 pt-6 border-t border-slate-800">
-                  {award.perks.map((perk, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                      <span>{perk}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+          {/* Explicitly written Prize Pool of 10000 RS */}
+          <h3 className="font-orbitron font-extrabold text-xl sm:text-2xl text-slate-100 group-hover:text-cyan-300 transition-colors mb-4">
+            PRIZE POOL OF 10,000 RS
+          </h3>
+
+          <p className="text-slate-300 font-space text-xs sm:text-sm max-w-md mx-auto leading-relaxed mb-8">
+            Awarded to top winning teams alongside official trophies, gold medals, achievement certificates, and incubation mentorship access.
+          </p>
+
+          {/* Perks Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left font-space text-xs text-slate-300 pt-6 border-t border-cyan-500/20">
+            <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
+              <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>₹10,000 RS Cash Prize Pool</span>
+            </div>
+            <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
+              <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>Winner & Runner-Up Trophies</span>
+            </div>
+            <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
+              <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>Official Certificates for Teams</span>
+            </div>
+            <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
+              <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span>AICTE Activity Hours & Mentorship</span>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Additional Benefits Grid */}
         <div className="glass-panel rounded-3xl p-8 border border-cyan-500/20">

@@ -37,7 +37,7 @@ const INITIAL_ROBOTS: Robot[] = [
     yPercent: 45,
     vx: -0.07,
     vy: 0.06,
-    status: 'Scanning Event Prize Pool • ₹7000 Verified',
+    status: 'Scanning Event Prize Pool • ₹10,000 RS Verified',
     isScanning: false,
     color: '#38BDF8',
   },

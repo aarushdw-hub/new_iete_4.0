@@ -10,7 +10,7 @@ export const EVENT_DETAILS = {
   targetDateISO: '2026-10-09T09:00:00+05:30', // Oct 9 9:00 AM IST
   entryFee: '₹119',
   teamSize: '2 to 4 Members',
-  prizePool: '₹7,000',
+  prizePool: '₹10,000 RS',
   registrationDeadline: '7 October',
   googleFormUrl: 'https://forms.gle/thinkai40-tcet-registration',
   contactEmail: 'iete.tcet@thakureducation.org',
@@ -121,7 +121,7 @@ export const TIMELINE_STEPS: TimelineItem[] = [
     title: 'Winner Announcement',
     phase: 'Phase 6',
     date: '9 October (5:00 PM)',
-    description: 'Felicitations, cash distribution (₹7,000 pool), and certificate awarding.',
+    description: 'Felicitations, cash distribution (₹10,000 RS pool), and certificate awarding.',
     iconName: 'Trophy',
     status: 'upcoming',
   },
