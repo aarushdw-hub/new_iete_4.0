@@ -32,11 +32,11 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     id: '2',
     name: 'Vice Chairperson',
     role: 'VICE CHAIR PERSON',
-    phone: '+91 98202 23456',
+    phone: '+91 90261 26126',
     email: 'vicechair.iete@tcetmumbai.in',
     avatarPlaceholder: '/images/VICE CHAIR PERSON.JPG',
     fileName: 'VICE CHAIR PERSON.JPG',
-    department: 'Executive Operations',
+    department: '',
   },
   {
     id: '3',
