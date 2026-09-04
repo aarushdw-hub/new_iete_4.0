@@ -42,11 +42,11 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     id: '3',
     name: 'Event Manager',
     role: 'EVENT MANGER',
-    phone: '+91 98203 34567',
+    phone: '+91 70218 62683',
     email: 'eventmanager.iete@tcetmumbai.in',
     avatarPlaceholder: '/images/EVENT MANGER.JPG',
     fileName: 'EVENT MANGER.JPG',
-    department: 'Event Execution & Scheduling',
+    department: '',
   },
   {
     id: '4',
