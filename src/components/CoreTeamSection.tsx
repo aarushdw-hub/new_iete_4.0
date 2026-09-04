@@ -45,9 +45,14 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
         </span>
       </div>
 
+      {/* Member Name */}
+      <h3 className="font-orbitron font-bold text-lg text-slate-100 tracking-wide mb-1 group-hover:text-cyan-300 transition-colors uppercase">
+        {member.name}
+      </h3>
+
       {/* Post / Designation */}
-      <div className="mb-2">
-        <span className="inline-block px-3 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-400/50 text-cyan-300 font-orbitron font-bold text-sm tracking-wider uppercase shadow-[0_0_12px_rgba(0,229,255,0.2)]">
+      <div className="mb-3">
+        <span className="inline-block px-3 py-1 rounded-lg bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-mono font-semibold text-xs tracking-wider uppercase shadow-[0_0_10px_rgba(0,229,255,0.15)]">
           {member.role}
         </span>
       </div>
@@ -58,7 +63,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
           {member.department}
         </p>
       ) : (
-        <div className="mb-3" />
+        <div className="mb-1" />
       )}
 
       {/* Contact Phone Pill */}
