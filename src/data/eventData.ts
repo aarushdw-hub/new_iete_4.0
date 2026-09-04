@@ -62,11 +62,11 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     id: '5',
     name: 'Treasurer',
     role: 'TREASURER',
-    phone: '+91 98205 56789',
+    phone: '+91 70211 16732',
     email: 'treasurer.iete@tcetmumbai.in',
     avatarPlaceholder: '/images/TREASURER.JPG',
     fileName: 'TREASURER.JPG',
-    department: 'Finance & Accounts Management',
+    department: '',
   },
 ];
 
