@@ -162,7 +162,7 @@ export const Navbar: React.FC<Props> = ({
               }}
               className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-400 text-black font-orbitron font-bold text-xs tracking-wider shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer"
             >
-              REGISTER NOW (₹119) ⚡
+              REGISTER NOW ⚡
             </button>
           </div>
         </div>

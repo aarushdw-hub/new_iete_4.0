@@ -66,7 +66,7 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
                 COUNTDOWN TO EVENT
               </h3>
               <p className="text-xs text-slate-400 font-mono">
-                Flagship Day: 9 October (IST) @ TCET Campus
+                9 October (IST) @ TCET Campus
               </p>
             </div>
           </div>

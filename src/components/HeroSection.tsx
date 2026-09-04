@@ -143,7 +143,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenRegister, onOpenRulebook })
             className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-500 text-black font-orbitron font-extrabold text-base tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_0_35px_rgba(0,229,255,0.5)] flex items-center gap-2.5 cursor-pointer"
           >
             <Sparkles className="w-5 h-5" />
-            REGISTER NOW (₹119)
+            REGISTER NOW
           </button>
 
           {/* Rulebook Button */}
