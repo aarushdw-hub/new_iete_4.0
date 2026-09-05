@@ -34,9 +34,13 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
         <div className="w-36 h-36 rounded-2xl p-1 bg-gradient-to-br from-cyan-400 via-sky-300 to-cyan-600 shadow-[0_0_25px_rgba(0,229,255,0.35)] group-hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] group-hover:scale-105 transition-all duration-300 overflow-hidden relative">
           <img
             src={member.avatarPlaceholder}
-            alt={member.role}
+            alt={member.name}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-top rounded-xl transition-all duration-300 select-none pointer-events-none"
+            style={{
+              objectPosition: member.avatarPosition || 'center top',
+              transform: member.avatarScale ? `scale(${member.avatarScale})` : undefined,
+            }}
+            className="w-full h-full object-cover rounded-xl transition-all duration-300 select-none pointer-events-none"
           />
         </div>
 

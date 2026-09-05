@@ -8,7 +8,9 @@ export const EVENT_DETAILS = {
   eventDate: '9 October',
   venue: 'TCET Campus, Kandivali East, Mumbai - 400101',
   targetDateISO: '2026-10-09T09:00:00+05:30', // Oct 9 9:00 AM IST
-  entryFee: '₹119',
+  entryFee: '₹119 (IETE) / ₹200 (Non-IETE)',
+  entryFeeIETE: '₹119',
+  entryFeeNonIETE: '₹200',
   teamSize: '2 to 4 Members',
   prizePool: '₹10,000 RS',
   registrationDeadline: '7 October',
@@ -27,6 +29,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/CHAIRPERSON.JPG',
     fileName: 'CHAIRPERSON.JPG',
     department: '',
+    avatarPosition: 'center 10%',
   },
   {
     id: '2',
@@ -37,16 +40,19 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/VICE CHAIR PERSON.JPG',
     fileName: 'VICE CHAIR PERSON.JPG',
     department: '',
+    avatarPosition: 'center 15%',
   },
   {
     id: '3',
-    name: 'Suraj Ravani',
+    name: 'Suraj Rawani',
     role: 'EVENT MANAGER',
     phone: '+91 70218 62683',
     email: 'eventmanager.iete@tcetmumbai.in',
     avatarPlaceholder: '/images/EVENT MANGER.JPG',
     fileName: 'EVENT MANGER.JPG',
     department: '',
+    avatarPosition: 'center 26%',
+    avatarScale: '1.1',
   },
   {
     id: '4',
@@ -57,6 +63,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/SPONSORSHIP HEAD.JPG',
     fileName: 'SPONSORSHIP HEAD.JPG',
     department: '',
+    avatarPosition: 'center 12%',
   },
   {
     id: '5',
@@ -67,6 +74,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/SECRETARY.JPG',
     fileName: 'SECRETARY.JPG',
     department: '',
+    avatarPosition: 'center 8%',
   },
   {
     id: '6',
@@ -77,6 +85,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/TREASURER.JPG',
     fileName: 'TREASURER.JPG',
     department: '',
+    avatarPosition: 'center 14%',
   },
   {
     id: '7',
@@ -87,6 +96,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/OUTREACH COORDINATOR.JPG',
     fileName: 'OUTREACH COORDINATOR.JPG',
     department: '',
+    avatarPosition: 'center 16%',
   },
   {
     id: '8',
@@ -97,6 +107,8 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
     avatarPlaceholder: '/images/TECHNICAL LEAD.JPG',
     fileName: 'TECHNICAL LEAD.JPG',
     department: '',
+    avatarPosition: 'center 38%',
+    avatarScale: '1.1',
   },
 ];
 
@@ -106,7 +118,7 @@ export const TIMELINE_STEPS: TimelineItem[] = [
     title: 'Online Registration',
     phase: 'Phase 1',
     date: 'Until 7 October',
-    description: 'Form your team of 2–4 members and register online with the entry fee of ₹119.',
+    description: 'Form your team of 2–4 members and register online (₹119 for IETE members, ₹200 for non-IETE members).',
     iconName: 'UserCheck',
     status: 'active',
   },
@@ -248,7 +260,7 @@ export const FAQ_LIST: FAQItem[] = [
   },
   {
     question: 'What is the registration fee and how do I pay?',
-    answer: 'The entry fee is ₹119 per team. Payment can be made via UPI QR code on the registration modal or Google Form.',
+    answer: 'The entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members. Payment can be made via UPI QR code on the registration modal or Google Form.',
     category: 'Registration',
   },
   {

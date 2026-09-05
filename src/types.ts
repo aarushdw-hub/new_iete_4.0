@@ -7,6 +7,8 @@ export interface TeamMember {
   avatarPlaceholder: string;
   fileName?: string;
   department?: string;
+  avatarPosition?: string;
+  avatarScale?: string;
 }
 
 export interface TimelineItem {

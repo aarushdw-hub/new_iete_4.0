@@ -60,7 +60,7 @@ export const RulebookModal: React.FC<Props> = ({ isOpen, onClose, onOpenRegister
                 <li>Participation is open to all engineering, polytechnic, and degree college students across India.</li>
                 <li>Teams must consist of 2 to 4 members.</li>
                 <li>Members can belong to different years or departments.</li>
-                <li>Entry fee is strictly ₹119 per team.</li>
+                <li>Entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members.</li>
               </ul>
             </div>
 
@@ -102,7 +102,7 @@ export const RulebookModal: React.FC<Props> = ({ isOpen, onClose, onOpenRegister
               }}
               className="px-6 py-2.5 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-xs hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)]"
             >
-              I AGREE — REGISTER TEAM (₹119)
+              I AGREE — PROCEED TO REGISTER
             </button>
           </div>
         </motion.div>

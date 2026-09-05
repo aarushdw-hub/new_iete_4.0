@@ -9,7 +9,6 @@ import { EntryFees } from './components/EntryFees';
 import { AwardsSection } from './components/AwardsSection';
 import { GuidelinesSection } from './components/GuidelinesSection';
 import { CoreTeamSection } from './components/CoreTeamSection';
-import { RegisterSection } from './components/RegisterSection';
 import { ContactVenue } from './components/ContactVenue';
 import { FutureProofPlaceholders } from './components/FutureProofPlaceholders';
 import { Footer } from './components/Footer';
@@ -19,8 +18,14 @@ import { BotAssistantDrawer } from './components/BotAssistantDrawer';
 
 export default function App() {
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
+  const [registrationTier, setRegistrationTier] = useState<'iete' | 'non-iete'>('iete');
   const [rulebookModalOpen, setRulebookModalOpen] = useState(false);
   const [botChatOpen, setBotChatOpen] = useState(false);
+
+  const handleOpenRegister = (tier: 'iete' | 'non-iete' = 'iete') => {
+    setRegistrationTier(tier);
+    setRegisterModalOpen(true);
+  };
 
   return (
     <div className="relative min-h-screen bg-[#05070B] text-slate-100 overflow-x-hidden selection:bg-[#00E5FF] selection:text-black font-space">
@@ -29,14 +34,14 @@ export default function App() {
 
       {/* Futuristic Fixed Navigation Bar */}
       <Navbar
-        onOpenRegister={() => setRegisterModalOpen(true)}
+        onOpenRegister={() => handleOpenRegister('iete')}
         onOpenBotChat={() => setBotChatOpen(true)}
       />
 
       {/* Main Page Layout */}
       <main className="relative z-10">
         <HeroSection
-          onOpenRegister={() => setRegisterModalOpen(true)}
+          onOpenRegister={() => handleOpenRegister('iete')}
           onOpenRulebook={() => setRulebookModalOpen(true)}
         />
 
@@ -46,15 +51,13 @@ export default function App() {
 
         <EventTimeline />
 
-        <EntryFees onOpenRegister={() => setRegisterModalOpen(true)} />
+        <EntryFees onOpenRegister={(tier) => handleOpenRegister(tier || 'iete')} />
 
         <AwardsSection />
 
         <GuidelinesSection onOpenRulebook={() => setRulebookModalOpen(true)} />
 
         <CoreTeamSection />
-
-        <RegisterSection onOpenRegisterModal={() => setRegisterModalOpen(true)} />
 
         <ContactVenue />
 
@@ -68,18 +71,19 @@ export default function App() {
       <RegistrationModal
         isOpen={registerModalOpen}
         onClose={() => setRegisterModalOpen(false)}
+        initialTier={registrationTier}
       />
 
       <RulebookModal
         isOpen={rulebookModalOpen}
         onClose={() => setRulebookModalOpen(false)}
-        onOpenRegister={() => setRegisterModalOpen(true)}
+        onOpenRegister={() => handleOpenRegister('iete')}
       />
 
       <BotAssistantDrawer
         isOpen={botChatOpen}
         onClose={() => setBotChatOpen(false)}
-        onOpenRegister={() => setRegisterModalOpen(true)}
+        onOpenRegister={() => handleOpenRegister('iete')}
       />
     </div>
   );

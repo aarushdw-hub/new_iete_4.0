@@ -25,7 +25,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     {
       id: '1',
       sender: 'bot',
-      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹119/team), prizes (₹10,000 RS pool), rules, or schedule?`,
+      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹119 for IETE members, ₹200 for non-IETE), prizes (₹10,000 RS pool), rules, or schedule?`,
     },
   ]);
 
@@ -48,10 +48,10 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     setTimeout(() => {
       sfx.playRobotChirp();
       const query = textToSend.toLowerCase();
-      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register for ₹119. The event happens on 9th October at TCET Mumbai with a ₹10,000 RS prize pool!`;
+      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register (₹119 for IETE members / ₹200 for non-IETE). The event happens on 9th October at TCET Mumbai with a ₹10,000 RS prize pool!`;
 
-      if (query.includes('fee') || query.includes('price') || query.includes('cost') || query.includes('pay') || query.includes('₹') || query.includes('119')) {
-        response = `[THINKBOT]: The entry fee is ₹119 per team! A single pass covers the entire team (2 to 4 members). No individual member fees are required.`;
+      if (query.includes('fee') || query.includes('price') || query.includes('cost') || query.includes('pay') || query.includes('₹') || query.includes('119') || query.includes('200')) {
+        response = `[THINKBOT]: The entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members! A single pass covers the entire team (2 to 4 members). No individual member fees are required.`;
       } else if (query.includes('date') || query.includes('when') || query.includes('time') || query.includes('schedule')) {
         response = `[THINKBOT]: Event Date: 9th October at TCET Campus. Registrations close on 7th October.`;
       } else if (query.includes('prize') || query.includes('award') || query.includes('win') || query.includes('cash')) {
@@ -189,7 +189,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
               className="w-full py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-[10px] font-mono hover:bg-cyan-500/20 transition-all flex items-center justify-center gap-1 cursor-pointer"
             >
               <Sparkles className="w-3 h-3 text-cyan-400" />
-              Ready to compete? Register your team for ₹119 →
+              Ready to compete? Register your team now →
             </button>
           </div>
         </motion.div>
