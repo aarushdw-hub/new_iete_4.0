@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { UserCheck, FileCode2, Cpu, UploadCloud, Presentation, Award, Trophy } from 'lucide-react';
-import { TIMELINE_STEPS } from '../data/eventData';
+import { UserCheck, FileCode2, Cpu, UploadCloud, Presentation, Award, Trophy, Sparkles } from 'lucide-react';
+import { TIMELINE_STEPS, EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
 export const EventTimeline: React.FC = () => {
@@ -105,6 +105,21 @@ export const EventTimeline: React.FC = () => {
                       <p className="text-xs text-slate-300 font-space leading-relaxed">
                         {step.description}
                       </p>
+
+                      {step.id === 1 && (
+                        <div className="mt-4 pt-3 border-t border-cyan-500/20">
+                          <a
+                            href={EVENT_DETAILS.googleFormUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => sfx.playClick()}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#39FF14] text-black font-orbitron font-bold text-xs tracking-wider shadow-[0_0_15px_rgba(0,229,255,0.4)] hover:shadow-[0_0_25px_rgba(57,255,20,0.6)] transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                          >
+                            <Sparkles className="w-3.5 h-3.5" />
+                            REGISTER NOW ⚡
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>

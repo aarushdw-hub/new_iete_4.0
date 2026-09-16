@@ -55,7 +55,10 @@ export const RegisterSection: React.FC<Props> = ({ onOpenRegisterModal }) => {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-2">
-                <button
+                <a
+                  href={EVENT_DETAILS.googleFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => {
                     sfx.playClick();
                     onOpenRegisterModal();
@@ -63,8 +66,8 @@ export const RegisterSection: React.FC<Props> = ({ onOpenRegisterModal }) => {
                   className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-400 text-black font-orbitron font-extrabold text-sm hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,229,255,0.4)] flex items-center gap-2 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
-                  ONLINE REGISTRATION FORM
-                </button>
+                  REGISTER NOW (GOOGLE FORM)
+                </a>
 
                 <a
                   href={EVENT_DETAILS.googleFormUrl}

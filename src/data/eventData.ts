@@ -14,7 +14,7 @@ export const EVENT_DETAILS = {
   teamSize: '2 to 4 Members',
   prizePool: '₹10,000 RS',
   registrationDeadline: '7 October',
-  googleFormUrl: 'https://forms.gle/thinkai40-tcet-registration',
+  googleFormUrl: 'https://forms.gle/KYSHhHryYgUFh4yn7',
   contactEmail: 'iete.tcet@thakureducation.org',
   contactPhonePrimary: '+91 98765 43210',
 };

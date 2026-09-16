@@ -48,6 +48,17 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li className="pt-1">
+              <a
+                href={EVENT_DETAILS.googleFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => sfx.playClick()}
+                className="text-cyan-300 hover:text-white font-bold transition-colors flex items-center gap-1.5 group"
+              >
+                <span className="text-[#39FF14]">⚡</span> REGISTER NOW <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </li>
           </ul>
         </div>
 

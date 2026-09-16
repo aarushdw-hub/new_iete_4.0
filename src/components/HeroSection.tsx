@@ -135,7 +135,10 @@ export const HeroSection: React.FC<Props> = ({ onOpenRegister, onOpenRulebook })
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           {/* Register Button */}
-          <button
+          <a
+            href={EVENT_DETAILS.googleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => {
               sfx.playClick();
               onOpenRegister();
@@ -144,7 +147,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenRegister, onOpenRulebook })
           >
             <Sparkles className="w-5 h-5" />
             REGISTER NOW
-          </button>
+          </a>
 
           {/* Rulebook Button */}
           <button

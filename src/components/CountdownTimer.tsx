@@ -81,12 +81,16 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
             <p className="text-slate-300 font-space text-sm max-w-lg mx-auto">
               THINK AI 4.0 is currently under way at TCET Campus! Final presentations and judging in progress.
             </p>
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onOpenRegister}
-              className="px-8 py-3 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)] cursor-pointer"
+              className="px-8 py-3 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_25px_rgba(0,229,255,0.5)] cursor-pointer inline-flex items-center gap-2"
             >
               REGISTER NOW
-            </button>
+              <Sparkles className="w-4 h-4" />
+            </a>
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
@@ -112,12 +116,20 @@ export const CountdownTimer: React.FC<Props> = ({ onOpenRegister }) => {
         )}
 
         {/* Footer info banner */}
-        <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between text-xs text-slate-400 font-mono gap-2">
+        <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between text-xs text-slate-400 font-mono gap-3">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span>Registration Deadline: {EVENT_DETAILS.registrationDeadline}</span>
           </div>
-          <span className="text-cyan-400 font-semibold">Limited Offline Seats • TCET Auditorium</span>
+          <a
+            href={EVENT_DETAILS.googleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onOpenRegister}
+            className="text-cyan-300 hover:text-white font-bold inline-flex items-center gap-1.5 transition-colors group"
+          >
+            REGISTER NOW <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
         </div>
       </div>
     </div>

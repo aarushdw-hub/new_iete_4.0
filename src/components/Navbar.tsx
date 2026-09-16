@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Bot, Sparkles } from 'lucide-react';
 import { sfx } from '../utils/audioSFX';
+import { EVENT_DETAILS } from '../data/eventData';
 
 interface Props {
   onOpenRegister: () => void;
@@ -93,7 +94,10 @@ export const Navbar: React.FC<Props> = ({
           </button>
 
           {/* Register Button */}
-          <button
+          <a
+            href={EVENT_DETAILS.googleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => {
               sfx.playClick();
               onOpenRegister();
@@ -105,7 +109,7 @@ export const Navbar: React.FC<Props> = ({
               <Sparkles className="w-3.5 h-3.5" />
               REGISTER NOW
             </span>
-          </button>
+          </a>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -155,15 +159,19 @@ export const Navbar: React.FC<Props> = ({
               TALK TO THINKBOT
             </button>
 
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
+                sfx.playClick();
                 setMobileMenuOpen(false);
                 onOpenRegister();
               }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-400 text-black font-orbitron font-bold text-xs tracking-wider shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-400 text-black font-orbitron font-bold text-xs tracking-wider shadow-[0_0_20px_rgba(0,229,255,0.4)] cursor-pointer flex items-center justify-center gap-1.5"
             >
               REGISTER NOW ⚡
-            </button>
+            </a>
           </div>
         </div>
       )}

@@ -95,15 +95,19 @@ export const RulebookModal: React.FC<Props> = ({ isOpen, onClose, onOpenRegister
               Download PDF Brochure
             </button>
 
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
+                sfx.playClick();
                 onClose();
                 onOpenRegister();
               }}
-              className="px-6 py-2.5 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-xs hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+              className="px-6 py-2.5 rounded-xl bg-cyan-400 text-black font-orbitron font-bold text-xs hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(0,229,255,0.4)] inline-flex items-center justify-center cursor-pointer"
             >
               I AGREE — PROCEED TO REGISTER
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

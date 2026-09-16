@@ -15,6 +15,7 @@ import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { RulebookModal } from './components/RulebookModal';
 import { BotAssistantDrawer } from './components/BotAssistantDrawer';
+import { EVENT_DETAILS } from './data/eventData';
 
 export default function App() {
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
@@ -22,9 +23,8 @@ export default function App() {
   const [rulebookModalOpen, setRulebookModalOpen] = useState(false);
   const [botChatOpen, setBotChatOpen] = useState(false);
 
-  const handleOpenRegister = (tier: 'iete' | 'non-iete' = 'iete') => {
-    setRegistrationTier(tier);
-    setRegisterModalOpen(true);
+  const handleOpenRegister = (_tier: 'iete' | 'non-iete' = 'iete') => {
+    window.open(EVENT_DETAILS.googleFormUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (

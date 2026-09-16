@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, QrCode, CheckCircle2, Sparkles, AlertCircle, ShieldCheck, Users, BadgePercent } from 'lucide-react';
+import { X, QrCode, CheckCircle2, Sparkles, AlertCircle, ShieldCheck, Users, BadgePercent, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
@@ -136,6 +136,25 @@ export const RegistrationModal: React.FC<Props> = ({
                 STEP {s.num}: {s.label}
               </div>
             ))}
+          </div>
+
+          {/* Direct Google Form Banner */}
+          <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-cyan-950/80 via-slate-900 to-cyan-950/80 border border-cyan-400/50 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
+            <div className="flex items-center gap-2.5">
+              <ExternalLink className="w-4 h-4 text-cyan-400 shrink-0" />
+              <p className="text-xs text-slate-200 font-mono">
+                Official Google Form: Register directly online.
+              </p>
+            </div>
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => sfx.playClick()}
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#39FF14] text-black font-orbitron font-bold text-xs shrink-0 hover:scale-105 transition-all shadow-[0_0_15px_rgba(0,229,255,0.3)] flex items-center gap-1.5 cursor-pointer"
+            >
+              REGISTER VIA GOOGLE FORM ⚡
+            </a>
           </div>
 
           {/* Step 1: Membership Selection & Team Info */}

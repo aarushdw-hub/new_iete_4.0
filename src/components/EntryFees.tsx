@@ -87,7 +87,10 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
               </div>
             </div>
 
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 sfx.playClick();
                 onOpenRegister('iete');
@@ -96,7 +99,7 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
             >
               <Zap className="w-5 h-5" />
               REGISTER AS IETE MEMBER ({EVENT_DETAILS.entryFeeIETE})
-            </button>
+            </a>
           </motion.div>
 
           {/* Card 2: Non-IETE Members Pass */}
@@ -153,7 +156,10 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
               </div>
             </div>
 
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 sfx.playClick();
                 onOpenRegister('non-iete');
@@ -162,7 +168,7 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
             >
               <Zap className="w-5 h-5 text-cyan-400" />
               REGISTER AS NON-IETE ({EVENT_DETAILS.entryFeeNonIETE})
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -192,10 +198,10 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => sfx.playClick()}
-            className="shrink-0 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-all font-mono text-xs flex items-center gap-1.5"
+            className="shrink-0 px-4 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-400/60 text-cyan-300 hover:bg-cyan-500/20 hover:text-white hover:border-cyan-300 transition-all font-mono text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
           >
             <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
-            Prefer Google Form?
+            REGISTER VIA GOOGLE FORM ⚡
           </a>
         </motion.div>
       </div>

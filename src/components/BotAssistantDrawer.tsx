@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Bot, X, Send, Sparkles } from 'lucide-react';
 import { sfx } from '../utils/audioSFX';
+import { EVENT_DETAILS } from '../data/eventData';
 
 interface Props {
   isOpen: boolean;
@@ -63,7 +64,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
       } else if (query.includes('guideline') || query.includes('rule') || query.includes('eligible')) {
         response = `[THINKBOT]: Any undergraduate student can participate! Teams submit a pitch deck and demonstrate a working prototype on 9th October at TCET Campus.`;
       } else if (query.includes('register') || query.includes('apply') || query.includes('link')) {
-        response = `[THINKBOT]: You can register immediately by clicking the 'REGISTER NOW' button on the website. Fast, online UPI payment and spot verification are supported!`;
+        response = `[THINKBOT]: You can register immediately using our official Google Form (${EVENT_DETAILS.googleFormUrl}) or by clicking the 'REGISTER NOW' buttons on the website. Fast UPI payment & spot verification are supported!`;
       }
 
       setMessages((prev) => [
@@ -181,8 +182,12 @@ export const BotAssistantDrawer: React.FC<Props> = ({
               </button>
             </div>
 
-            <button
+            <a
+              href={EVENT_DETAILS.googleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
+                sfx.playClick();
                 onClose();
                 onOpenRegister();
               }}
@@ -190,7 +195,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
             >
               <Sparkles className="w-3 h-3 text-cyan-400" />
               Ready to compete? Register your team now →
-            </button>
+            </a>
           </div>
         </motion.div>
       )}
