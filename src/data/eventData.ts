@@ -16,6 +16,7 @@ export const EVENT_DETAILS = {
   registrationDeadline: '6 October',
   googleFormUrl: 'https://forms.gle/KYSHhHryYgUFh4yn7',
   contactEmail: 'iete@tcetmumbai.in',
+  whatsappGroupUrl: 'https://chat.whatsapp.com/GcFyA2cxUbw9vpNL132Cce',
 };
 
 export const CORE_TEAM_MEMBERS: TeamMember[] = [

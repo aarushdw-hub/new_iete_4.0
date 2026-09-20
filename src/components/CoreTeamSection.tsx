@@ -111,7 +111,7 @@ export const CoreTeamSection: React.FC = () => {
         {/* WhatsApp Community Banner: Follow for Updates (Above Meet Our Core Team) */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <a
-            href="https://chat.whatsapp.com/ElaDLww7jQ2HFbKDddyrqQ"
+            href="https://chat.whatsapp.com/GcFyA2cxUbw9vpNL132Cce"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => sfx.playClick()}
