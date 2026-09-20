@@ -184,7 +184,7 @@ export const TIMELINE_STEPS: TimelineItem[] = [
     highlightTag: '09TH OCTOBER',
     phase: 'Grand Finale',
     date: '09th October',
-    description: 'Grand valedictory ceremony, winners announced, cash prize distribution (₹10,000 RS pool), trophies, medals, and certificates.',
+    description: 'Grand valedictory ceremony, winners announced, prize distribution (₹10,000 RS pool), trophies, medals, and certificates.',
     iconName: 'Trophy',
     status: 'upcoming',
     colorTheme: 'trophy',

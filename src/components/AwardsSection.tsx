@@ -37,7 +37,7 @@ export const AwardsSection: React.FC = () => {
         >
           {/* Top Neon Laser Accent */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
-          
+
           {/* Radial Ambient Glow */}
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-[90px] pointer-events-none" />
 
@@ -68,7 +68,7 @@ export const AwardsSection: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left font-space text-xs text-slate-300 pt-6 border-t border-cyan-500/20">
             <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
               <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>₹10,000 RS Cash Prize Pool</span>
+              <span>₹10,000 RS Prize Pool</span>
             </div>
             <div className="flex items-center gap-2.5 bg-slate-900/70 p-3.5 rounded-xl border border-slate-800">
               <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />

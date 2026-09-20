@@ -7,8 +7,8 @@ export const WhyParticipate: React.FC = () => {
   const benefits = [
     {
       icon: Trophy,
-      title: 'Win Exciting Cash Prizes',
-      desc: 'Compete for a total cash prize pool of ₹10,000 RS + trophies & accolades.',
+      title: 'Win Exciting Prizes',
+      desc: 'Compete for a total prize pool of ₹10,000 RS + trophies & accolades.',
     },
     {
       icon: Clock,

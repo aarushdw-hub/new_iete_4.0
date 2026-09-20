@@ -57,7 +57,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
         response = `[THINKBOT]: Registration deadline is 6th October! The offline event happens on 9th October at TCET Campus.`;
       } else if (query.includes('food') || query.includes('refreshment') || query.includes('lunch') || query.includes('snack')) {
         response = `[THINKBOT]: Please note that no refreshments will be provided. Participants are requested to make their own dining/refreshment arrangements.`;
-      } else if (query.includes('prize') || query.includes('award') || query.includes('win') || query.includes('cash')) {
+      } else if (query.includes('prize') || query.includes('award') || query.includes('win')) {
         response = `[THINKBOT]: Total Prize Pool is ₹10,000 RS! Awarded alongside winner trophies, medals, verified certificates & AICTE activity points!`;
       } else if (query.includes('team') || query.includes('size') || query.includes('member') || query.includes('solo')) {
         response = `[THINKBOT]: Teams must have 2 to 4 members. Cross-department, inter-college, and cross-year teams are warmly welcome!`;
@@ -151,11 +151,10 @@ export const BotAssistantDrawer: React.FC<Props> = ({
                 )}
 
                 <div
-                  className={`p-3 rounded-2xl max-w-[82%] leading-relaxed ${
-                    m.sender === 'user'
+                  className={`p-3 rounded-2xl max-w-[82%] leading-relaxed ${m.sender === 'user'
                       ? 'bg-gradient-to-r from-cyan-500 to-sky-400 text-black font-semibold shadow-[0_0_15px_rgba(0,229,255,0.3)]'
                       : 'bg-slate-900/90 border border-cyan-500/20 text-slate-200 shadow-md'
-                  }`}
+                    }`}
                 >
                   {m.text}
                 </div>
