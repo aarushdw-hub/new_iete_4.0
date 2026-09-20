@@ -13,12 +13,17 @@ export interface TeamMember {
 
 export interface TimelineItem {
   id: number;
+  stepNumber: string;
   title: string;
-  phase: string;
-  date: string;
+  badgeTitle?: string;
+  highlightTag?: string;
+  phase?: string;
+  date?: string;
   description: string;
+  details?: string;
   iconName: string;
   status: 'upcoming' | 'active' | 'completed';
+  colorTheme?: 'cyan' | 'blue' | 'teal' | 'purple' | 'trophy';
 }
 
 export interface ProblemTrack {
