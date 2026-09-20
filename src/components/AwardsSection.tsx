@@ -8,7 +8,7 @@ export const AwardsSection: React.FC = () => {
   const additionalBenefits = [
     { icon: FileText, title: 'Participation Certificate', desc: 'Verified certificate for every team presenting at TCET.' },
     { icon: Clock, title: 'AICTE Activity Hours', desc: 'Official activity point allocation credited to degree records.' },
-    { icon: Users, title: 'Networking Opportunities', desc: 'Interact with AI researchers, sponsors, and peers.' },
+    { icon: Users, title: 'Networking Opportunities', desc: 'Interact with AI researchers, domain experts, and peers.' },
     { icon: Star, title: 'Institutional Recognition', desc: 'Featured on TCET official social handles & IETE news bulletin.' },
     { icon: Eye, title: 'Professional Visibility', desc: 'Showcase your AI project on national innovation portals.' },
   ];

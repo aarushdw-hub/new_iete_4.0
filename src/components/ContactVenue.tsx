@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Mail, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, Mail, Navigation } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -61,41 +61,20 @@ export const ContactVenue: React.FC = () => {
               className="glass-panel p-6 rounded-2xl border border-cyan-500/30 flex items-start gap-4"
             >
               <div className="p-3 rounded-xl bg-cyan-950 border border-cyan-400/40 text-cyan-300">
-                <Phone className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-orbitron font-bold text-base text-slate-100 mb-1">
-                  PRIMARY HELPLINE
-                </h3>
-                <p className="text-xs font-mono text-cyan-300 font-bold mb-1">
-                  {EVENT_DETAILS.contactPhonePrimary}
-                </p>
-                <p className="text-xs font-space text-slate-400">
-                  Available Mon–Sat: 9:00 AM – 6:00 PM IST
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              onMouseEnter={() => sfx.playHover()}
-              className="glass-panel p-6 rounded-2xl border border-cyan-500/30 flex items-start gap-4"
-            >
-              <div className="p-3 rounded-xl bg-cyan-950 border border-cyan-400/40 text-cyan-300">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="font-orbitron font-bold text-base text-slate-100 mb-1">
                   OFFICIAL EMAIL
                 </h3>
-                <p className="text-xs font-mono text-cyan-300 font-bold mb-1">
+                <a
+                  href={`mailto:${EVENT_DETAILS.contactEmail}`}
+                  className="text-xs font-mono text-cyan-300 hover:underline font-bold mb-1 block"
+                >
                   {EVENT_DETAILS.contactEmail}
-                </p>
+                </a>
                 <p className="text-xs font-space text-slate-400">
-                  Write to us for sponsorship, queries, or technical support.
+                  Write to us for event queries or technical support.
                 </p>
               </div>
             </motion.div>

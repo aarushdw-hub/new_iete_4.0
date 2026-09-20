@@ -60,7 +60,8 @@ export const RulebookModal: React.FC<Props> = ({ isOpen, onClose, onOpenRegister
                 <li>Participation is open to all engineering, polytechnic, and degree college students across India.</li>
                 <li>Teams must consist of 2 to 4 members.</li>
                 <li>Members can belong to different years or departments.</li>
-                <li>Entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members.</li>
+                <li>Entry fee is ₹99 per team for IETE members and ₹200 per team for non-IETE members.</li>
+                <li>No refreshments will be provided; participants must make their own arrangements.</li>
               </ul>
             </div>
 

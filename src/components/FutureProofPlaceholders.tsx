@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Image, Award, Users, HelpCircle, ChevronDown, Sparkles } from 'lucide-react';
+import { Image, Award, HelpCircle, ChevronDown } from 'lucide-react';
 import { FAQ_LIST } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
 export const FutureProofPlaceholders: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'faqs' | 'sponsors' | 'judges' | 'gallery'>('faqs');
+  const [activeTab, setActiveTab] = useState<'faqs' | 'judges' | 'gallery'>('faqs');
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   const tabs = [
     { id: 'faqs', label: 'FAQs', icon: HelpCircle },
-    { id: 'sponsors', label: 'Sponsors & Partners', icon: Sparkles },
     { id: 'judges', label: 'Eminent Judges & Speakers', icon: Award },
     { id: 'gallery', label: 'Photo Gallery', icon: Image },
   ];
@@ -92,42 +91,6 @@ export const FutureProofPlaceholders: React.FC = () => {
                   </div>
                 );
               })}
-            </div>
-          )}
-
-          {/* Sponsors & Partners Tab */}
-          {activeTab === 'sponsors' && (
-            <div className="text-center space-y-8">
-              <div>
-                <h3 className="font-orbitron font-bold text-xl text-cyan-200 mb-2">
-                  SPONSORS & ECOSYSTEM PARTNERS
-                </h3>
-                <p className="text-xs text-slate-400 font-space">
-                  Supported by world-class academic forums and technology pioneers.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { name: 'IETE India', badge: 'PRINCIPAL ORGANIZER' },
-                  { name: 'TCET Mumbai', badge: 'HOST INSTITUTION' },
-                  { name: 'NVIDIA Inception (Community)', badge: 'ECOSYSTEM PARTNER' },
-                  { name: 'OpenAI Community', badge: 'AI ADVOCATE' },
-                ].map((s, i) => (
-                  <div
-                    key={i}
-                    className="p-6 rounded-2xl bg-slate-900/80 border border-cyan-500/20 hover:border-cyan-400 transition-all flex flex-col justify-center items-center"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 font-orbitron font-black text-xl mb-3">
-                      {s.name.slice(0, 2)}
-                    </div>
-                    <h4 className="font-orbitron font-bold text-sm text-slate-200 mb-1">{s.name}</h4>
-                    <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/20 px-2 py-0.5 rounded">
-                      {s.badge}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
           )}
 

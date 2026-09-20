@@ -36,7 +36,7 @@ export const RegisterSection: React.FC<Props> = ({ onOpenRegisterModal }) => {
               </h2>
 
               <p className="text-sm font-space text-slate-300 leading-relaxed">
-                Join Mumbai's flagship student AI competition. Form your team of 2–4 members, select your challenge track, pay the ₹119 entry fee, and present your project before experts on 18th September 2025 at TCET.
+                Join Mumbai's flagship student AI competition. Form your team of 2–4 members, select your challenge track, pay the ₹99 entry fee, and present your project before experts on 9th October at TCET.
               </p>
 
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 font-mono text-xs text-slate-300">

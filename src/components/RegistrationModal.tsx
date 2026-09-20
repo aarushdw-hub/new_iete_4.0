@@ -42,7 +42,7 @@ export const RegistrationModal: React.FC<Props> = ({
 
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
 
-  const currentFee = membershipTier === 'iete' ? 119 : 200;
+  const currentFee = membershipTier === 'iete' ? 99 : 200;
   const currentFeeStr = `₹${currentFee}`;
 
   const validateStep1 = () => {
@@ -111,7 +111,7 @@ export const RegistrationModal: React.FC<Props> = ({
                 TEAM REGISTRATION — THINK AI 4.0
               </h2>
               <p className="text-xs font-mono text-slate-400">
-                Fee: ₹119 (IETE) • ₹200 (Non-IETE) • Organized by IETE TCET
+                Fee: ₹99 (IETE) • ₹200 (Non-IETE) • Organized by IETE TCET
               </p>
             </div>
           </div>
@@ -185,11 +185,11 @@ export const RegistrationModal: React.FC<Props> = ({
                         IETE MEMBER TEAM
                       </span>
                       <span className="font-orbitron font-black text-sm text-cyan-300">
-                        ₹119
+                        ₹99
                       </span>
                     </div>
                     <p className="text-[11px] text-slate-400">
-                      For teams with registered IETE Forum members (Save ₹81)
+                      For teams with registered IETE Forum members (Save ₹101)
                     </p>
                   </button>
 
@@ -443,7 +443,7 @@ export const RegistrationModal: React.FC<Props> = ({
               </p>
 
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 max-w-md mx-auto text-xs text-slate-300 font-mono space-y-1.5 text-left">
-                <p>• Category: <span className="text-cyan-300">{membershipTier === 'iete' ? 'IETE Member Pass (₹119)' : 'Non-IETE Member Pass (₹200)'}</span></p>
+                <p>• Category: <span className="text-cyan-300">{membershipTier === 'iete' ? 'IETE Member Pass (₹99)' : 'Non-IETE Member Pass (₹200)'}</span></p>
                 <p>• Confirmation email sent to: {formData.leadEmail}</p>
                 <p>• Team Lead Contact: {formData.leadPhone}</p>
                 <p>• Team Size: {formData.teamSize} Members</p>

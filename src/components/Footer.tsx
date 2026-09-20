@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Heart, Instagram, Linkedin, Mail, MapPin, ArrowUp } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -65,16 +65,14 @@ export const Footer: React.FC = () => {
         {/* Col 3: Contact */}
         <div>
           <h4 className="font-orbitron font-bold text-sm text-slate-100 uppercase tracking-wider mb-4">
-            EVENT HELPLINE
+            OFFICIAL CONTACT
           </h4>
           <div className="space-y-3 text-slate-400">
             <p className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>{EVENT_DETAILS.contactPhonePrimary}</span>
-            </p>
-            <p className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>{EVENT_DETAILS.contactEmail}</span>
+              <a href={`mailto:${EVENT_DETAILS.contactEmail}`} className="hover:text-cyan-300 transition-colors">
+                {EVENT_DETAILS.contactEmail}
+              </a>
             </p>
             <p className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />

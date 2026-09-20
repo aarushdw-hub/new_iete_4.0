@@ -26,7 +26,7 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     {
       id: '1',
       sender: 'bot',
-      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹119 for IETE members, ₹200 for non-IETE), prizes (₹10,000 RS pool), rules, or schedule?`,
+      text: `Hello! I am THINKBOT, your official AI assistant for THINK AI 4.0 at TCET Mumbai. How can I assist you today with registration (₹99 for IETE members, ₹200 for non-IETE), prizes (₹10,000 RS pool), rules, or schedule?`,
     },
   ]);
 
@@ -49,12 +49,14 @@ export const BotAssistantDrawer: React.FC<Props> = ({
     setTimeout(() => {
       sfx.playRobotChirp();
       const query = textToSend.toLowerCase();
-      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register (₹119 for IETE members / ₹200 for non-IETE). The event happens on 9th October at TCET Mumbai with a ₹10,000 RS prize pool!`;
+      let response = `[THINKBOT]: I'm synchronized with THINK AI 4.0! Teams of 2-4 members can register (₹99 for IETE members / ₹200 for non-IETE). The event happens on 9th October at TCET Mumbai with a ₹10,000 RS prize pool!`;
 
-      if (query.includes('fee') || query.includes('price') || query.includes('cost') || query.includes('pay') || query.includes('₹') || query.includes('119') || query.includes('200')) {
-        response = `[THINKBOT]: The entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members! A single pass covers the entire team (2 to 4 members). No individual member fees are required.`;
-      } else if (query.includes('date') || query.includes('when') || query.includes('time') || query.includes('schedule')) {
-        response = `[THINKBOT]: Event Date: 9th October at TCET Campus. Registrations close on 7th October.`;
+      if (query.includes('fee') || query.includes('price') || query.includes('cost') || query.includes('pay') || query.includes('₹') || query.includes('99') || query.includes('200')) {
+        response = `[THINKBOT]: The entry fee is ₹99 per team for IETE members and ₹200 per team for non-IETE members! A single pass covers the entire team (2 to 4 members). No individual member fees are required.`;
+      } else if (query.includes('date') || query.includes('when') || query.includes('time') || query.includes('schedule') || query.includes('deadline')) {
+        response = `[THINKBOT]: Registration deadline is 6th October! The offline event happens on 9th October at TCET Campus.`;
+      } else if (query.includes('food') || query.includes('refreshment') || query.includes('lunch') || query.includes('snack')) {
+        response = `[THINKBOT]: Please note that no refreshments will be provided. Participants are requested to make their own dining/refreshment arrangements.`;
       } else if (query.includes('prize') || query.includes('award') || query.includes('win') || query.includes('cash')) {
         response = `[THINKBOT]: Total Prize Pool is ₹10,000 RS! Awarded alongside winner trophies, medals, verified certificates & AICTE activity points!`;
       } else if (query.includes('team') || query.includes('size') || query.includes('member') || query.includes('solo')) {

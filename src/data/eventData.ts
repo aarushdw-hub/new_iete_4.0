@@ -8,15 +8,14 @@ export const EVENT_DETAILS = {
   eventDate: '9 October',
   venue: 'TCET Campus, Kandivali East, Mumbai - 400101',
   targetDateISO: '2026-10-09T09:00:00+05:30', // Oct 9 9:00 AM IST
-  entryFee: '₹119 (IETE) / ₹200 (Non-IETE)',
-  entryFeeIETE: '₹119',
+  entryFee: '₹99 (IETE) / ₹200 (Non-IETE)',
+  entryFeeIETE: '₹99',
   entryFeeNonIETE: '₹200',
   teamSize: '2 to 4 Members',
   prizePool: '₹10,000 RS',
-  registrationDeadline: '7 October',
+  registrationDeadline: '6 October',
   googleFormUrl: 'https://forms.gle/KYSHhHryYgUFh4yn7',
-  contactEmail: 'iete.tcet@thakureducation.org',
-  contactPhonePrimary: '+91 98765 43210',
+  contactEmail: 'iete@tcetmumbai.in',
 };
 
 export const CORE_TEAM_MEMBERS: TeamMember[] = [
@@ -120,7 +119,7 @@ export const TIMELINE_STEPS: TimelineItem[] = [
     badgeTitle: 'Registration Begins',
     phase: 'Step 0',
     date: 'Active Now',
-    description: 'Online team registration is live. Form your team of 2–4 members (₹119 IETE / ₹200 Non-IETE) and secure your spot in THINK AI 4.0.',
+    description: 'Online team registration is live. Form your team of 2–4 members (₹99 IETE / ₹200 Non-IETE) and secure your spot in THINK AI 4.0.',
     iconName: 'ClipboardList',
     status: 'active',
     colorTheme: 'cyan',
@@ -282,8 +281,13 @@ export const FAQ_LIST: FAQItem[] = [
   },
   {
     question: 'What is the registration fee and how do I pay?',
-    answer: 'The entry fee is ₹119 per team for IETE members and ₹200 per team for non-IETE members. Payment can be made via UPI QR code on the registration modal or Google Form.',
+    answer: 'The entry fee is ₹99 per team for IETE members and ₹200 per team for non-IETE members. Payment can be made via UPI on the official Google Form.',
     category: 'Registration',
+  },
+  {
+    question: 'Will refreshments or food be provided during the event?',
+    answer: 'No refreshments will be provided. Participants are advised to make their own arrangements for meals and snacks during the event day.',
+    category: 'Event Day',
   },
   {
     question: 'Do all participants receive AICTE Activity Hours and Certificates?',
@@ -332,5 +336,10 @@ export const GUIDELINES_CHECKLIST = [
     id: 6,
     title: 'Reporting Time',
     detail: 'Teams must report to TCET campus by 8:30 AM on 9th October with college IDs.',
+  },
+  {
+    id: 7,
+    title: 'Food & Refreshments',
+    detail: 'No refreshments will be provided. Participants must make their own arrangements for lunch and refreshments.',
   },
 ];

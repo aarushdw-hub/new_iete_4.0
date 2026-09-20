@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check, Sparkles, Zap, ShieldCheck, ExternalLink, QrCode, Award, Users } from 'lucide-react';
+import { Check, Sparkles, Zap, ShieldCheck, Award, Users } from 'lucide-react';
 import { EVENT_DETAILS } from '../data/eventData';
 import { sfx } from '../utils/audioSFX';
 
@@ -12,10 +12,8 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
   const commonPerks = [
     'Full Access to AI Problem Statements',
     'Offline Pitching Pass @ TCET Campus',
-    'Official Participation Certificate (All Members)',
     'Eligible AICTE Activity Point Hours',
     'Expert Mentorship & Pitch Feedback',
-    'Refreshments & Swag Vouchers',
   ];
 
   return (
@@ -44,7 +42,7 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
             {/* Best Value / IETE Badge */}
             <div className="absolute top-0 right-0 bg-gradient-to-l from-cyan-400 to-sky-400 text-black font-orbitron font-extrabold text-[11px] px-5 py-1.5 rounded-bl-2xl shadow-lg uppercase tracking-wider flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
-              IETE MEMBER PASS • SAVE ₹81
+              IETE MEMBER PASS • SAVE ₹101
             </div>
 
             <div>
@@ -171,39 +169,6 @@ export const EntryFees: React.FC<Props> = ({ onOpenRegister }) => {
             </a>
           </motion.div>
         </div>
-
-        {/* Bottom Auxiliary Bar: UPI ID & Google Form Option */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto rounded-2xl p-4 sm:p-5 bg-slate-950/80 border border-cyan-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
-        >
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-400/30 text-cyan-400 shrink-0">
-              <QrCode className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-xs font-mono font-bold text-cyan-300">
-                OFFICIAL UPI PAYMENT ID: <span className="text-white">iete.tcet@upi</span>
-              </p>
-              <p className="text-[11px] text-slate-400 font-space">
-                Accepted via PhonePe, Google Pay, Paytm, or BHIM UPI
-              </p>
-            </div>
-          </div>
-
-          <a
-            href={EVENT_DETAILS.googleFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => sfx.playClick()}
-            className="shrink-0 px-4 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-400/60 text-cyan-300 hover:bg-cyan-500/20 hover:text-white hover:border-cyan-300 transition-all font-mono text-xs flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
-          >
-            <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
-            REGISTER VIA GOOGLE FORM ⚡
-          </a>
-        </motion.div>
       </div>
     </section>
   );
