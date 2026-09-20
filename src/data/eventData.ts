@@ -44,7 +44,7 @@ export const CORE_TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: '3',
-    name: 'Suraj Singh',
+    name: 'Suraj Rawani',
     role: 'EVENT MANAGER',
     phone: '+91 70218 62683',
     email: 'eventmanager.iete@tcetmumbai.in',
@@ -337,10 +337,5 @@ export const GUIDELINES_CHECKLIST = [
     id: 6,
     title: 'Reporting Time',
     detail: 'Teams must report to TCET campus by 8:30 AM on 9th October with college IDs.',
-  },
-  {
-    id: 7,
-    title: 'Food & Refreshments',
-    detail: 'No refreshments will be provided. Participants must make their own arrangements for lunch and refreshments.',
   },
 ];
