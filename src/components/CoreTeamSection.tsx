@@ -35,6 +35,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, index }) => {
           <img
             src={member.avatarPlaceholder}
             alt={member.name}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
             style={{
               objectPosition: member.avatarPosition || 'center top',

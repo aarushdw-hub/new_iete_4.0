@@ -114,6 +114,11 @@ export const LivingBackgroundCanvas: React.FC = () => {
     };
 
     const render = (time: number) => {
+      if (document.hidden) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
+
       // Smooth mouse lerp for parallax
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
@@ -243,13 +248,10 @@ export const LivingBackgroundCanvas: React.FC = () => {
         const nx = node.x + parallaxX;
         const ny = node.y + parallaxY;
 
-        // Outer glow
-        const glowGradient = ctx.createRadialGradient(nx, ny, 0, nx, ny, currentRadius * 4);
-        glowGradient.addColorStop(0, 'rgba(0, 229, 255, 0.4)');
-        glowGradient.addColorStop(1, 'rgba(0, 229, 255, 0)');
-        ctx.fillStyle = glowGradient;
+        // Outer soft glow
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.18)';
         ctx.beginPath();
-        ctx.arc(nx, ny, currentRadius * 4, 0, Math.PI * 2);
+        ctx.arc(nx, ny, currentRadius * 3, 0, Math.PI * 2);
         ctx.fill();
 
         // Core Node

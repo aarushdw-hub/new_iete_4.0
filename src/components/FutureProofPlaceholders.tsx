@@ -142,6 +142,8 @@ export const FutureProofPlaceholders: React.FC = () => {
                     <img
                       src={img}
                       alt={`THINK AI Highlight ${i + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
