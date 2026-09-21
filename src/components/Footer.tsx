@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://instagram.com"
+              href={EVENT_DETAILS.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => sfx.playClick()}

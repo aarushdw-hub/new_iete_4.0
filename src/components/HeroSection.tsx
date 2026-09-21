@@ -39,9 +39,9 @@ export const HeroSection: React.FC<Props> = ({ onOpenRegister, onOpenRulebook })
 
   const handleContactScroll = () => {
     sfx.playClick();
-    const contactEl = document.querySelector('#contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
+    const teamEl = document.querySelector('#team');
+    if (teamEl) {
+      teamEl.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

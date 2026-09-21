@@ -18,6 +18,7 @@ export const EVENT_DETAILS = {
   contactEmail: 'iete@tcetmumbai.in',
   whatsappGroupUrl: 'https://chat.whatsapp.com/GcFyA2cxUbw9vpNL132Cce',
   linkedinUrl: 'https://www.linkedin.com/company/ietetcet/posts/?feedView=all',
+  instagramUrl: 'https://www.instagram.com/tcet_iete?stkn=MWswc3o5dGJlMjBkaw==',
 };
 
 export const CORE_TEAM_MEMBERS: TeamMember[] = [
