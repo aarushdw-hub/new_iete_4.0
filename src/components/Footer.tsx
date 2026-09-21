@@ -103,7 +103,7 @@ export const Footer: React.FC = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href={EVENT_DETAILS.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => sfx.playClick()}

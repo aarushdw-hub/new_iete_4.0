@@ -17,6 +17,7 @@ export const EVENT_DETAILS = {
   googleFormUrl: 'https://forms.gle/KYSHhHryYgUFh4yn7',
   contactEmail: 'iete@tcetmumbai.in',
   whatsappGroupUrl: 'https://chat.whatsapp.com/GcFyA2cxUbw9vpNL132Cce',
+  linkedinUrl: 'https://www.linkedin.com/company/ietetcet/posts/?feedView=all',
 };
 
 export const CORE_TEAM_MEMBERS: TeamMember[] = [
